@@ -10,17 +10,18 @@
     padding: 5px;
     width: 200px;
     margin: 5px 0 5px 0;
+    flex-grow: 1;
 }
 .hid{
-    position: absolute;
-    top: 465px;
-    left: 203px;
-    width: 23px;
+    margin-left: 5px;
+    width: 20px;
     cursor: pointer;
 }
 .checking{
-    position: absolute;
-    top: 404px;
-    left: 205px;
+    margin-left: 5px;
     width: 20px;
+}
+.mailbox{
+    display: flex;
+    align-items: center;
 }

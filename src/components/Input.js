@@ -33,34 +33,38 @@ const Input = () => {
         <div>
             <form className={styles.container} onSubmit={formSub}>
                 <label>E-mail</label>
-                <input 
-                    value={log} 
-                    name="email" 
-                    type="email" 
-                    onChange={mailHandler} 
-                    placeholder="E-mail" 
-                    className={styles.ininput}
-                />
-                <img 
-                    src={eCheck ? checked : notcheck} 
-                    className={styles.checking} 
-                    onClick={hidHandler} 
-                />                
+                <div className={styles.mailbox}>
+                    <input 
+                        value={log} 
+                        name="email" 
+                        type="email" 
+                        onChange={mailHandler} 
+                        placeholder="E-mail" 
+                        className={styles.ininput}
+                    />
+                    <img 
+                        src={eCheck ? checked : notcheck} 
+                        className={styles.checking} 
+                        onClick={hidHandler} 
+                    />  
+                </div>
                 <label>Password</label>
-                <input 
-                    value={pw} 
-                    name="password" 
-                    type={hide ? "text" : "password" } 
-                    onChange={pwHandler} 
-                    placeholder="Password" 
-                    id="pwID" 
-                    className={styles.ininput}
-                />
-                <img 
-                    src={hide ? appeareye : hiddeneye} 
-                    className={styles.hid} 
-                    onClick={hidHandler} 
-                />
+                <div className={styles.mailbox}>
+                    <input 
+                        value={pw} 
+                        name="password" 
+                        type={hide ? "text" : "password" } 
+                        onChange={pwHandler} 
+                        placeholder="Password" 
+                        id="pwID" 
+                        className={styles.ininput}
+                    />
+                    <img 
+                        src={hide ? appeareye : hiddeneye} 
+                        className={styles.hid} 
+                        onClick={hidHandler} 
+                    />
+                </div>
             </form>
         </div>
     );
