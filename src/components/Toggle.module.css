@@ -1,0 +1,40 @@
+.tcontainer{
+    display: flex;
+    flex-direction: row;
+    padding: 2px;
+    width: 400px;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+.tdefult{
+    padding: 10px;
+    flex-grow: 1;
+    text-align: center;
+    border-radius: 18px;
+    list-style: none;
+    cursor: pointer;
+}
+.tlabel{
+    padding: 10px 70px 10px 70px;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+.toinput{
+    display: none;
+}
+span{
+    position: absolute;
+    width: 200px;
+    height: 41px;
+    background-color: lightgray;
+    border-radius: 18px;
+    z-index: 1;
+    transition: transform 0.25s;
+}
+[id="defaul"]:checked ~ div .tcontainer > span{
+    transform: translateX(0%);
+}
+[id="detail"]:checked ~ div .tcontainer > span{
+    transform: translateX(100%);
+}

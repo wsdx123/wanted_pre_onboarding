@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+    padding: 10px;
+    width: 240px;
+}
+.ininput{
+    font-size: 15px;
+    padding: 5px;
+    width: 200px;
+    margin: 5px 0 5px 0;
+}
+.hid{
+    position: absolute;
+    top: 465px;
+    left: 203px;
+    width: 23px;
+    cursor: pointer;
+}
+.checking{
+    position: absolute;
+    top: 404px;
+    left: 205px;
+    width: 20px;
+}

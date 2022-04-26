@@ -1,7 +1,21 @@
+import Toggle from "./components/Toggle";
+import Tab from "./components/Tab";
+import Slider from "./components/Slider";
+import Input from "./components/Input";
+import Dropdown from "./components/Dropdown";
+
 function App() {
   return (
     <div>
-      <h1>Hi</h1>
+      <Toggle />
+      <br />
+      <Tab />
+      <br />
+      <Slider />
+      <br />
+      <Input />
+      <br />
+      <Dropdown />
     </div>
   );
 }

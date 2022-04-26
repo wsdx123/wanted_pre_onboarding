@@ -1,70 +1,17 @@
-# Getting Started with Create React App
+Toggle
+>2개의 input태그를 type=radio 로 설정하고, label 태그에 연결하여 사용했습니다. 그리고 배경색이 들어간 span태그가 checked된 라벨에 이동하도록 구현하였습니다.
+초기에 어떤방법으로 구현해야할지, 어떤 태그를 써야할지부터가 고민이었던 항목이었습니다. 그래서 처음 구현했을땐 체크되면 해당 구역의 색깔을 바꿔주는 style을 주어 슬라이드되는 애니메이션 구현을 포기했었으나, tab의 애니메이션을 구현하면서 이것역시 같은방법으로 하면되겠다 생각하여 애니메이션을 추가해 구현할수 있었습니다.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tab
+>Tab자체를 만들고(리스트), 클릭하면 다른탭이 선택되는 css를 만드는건 어렵지 않았으나 슬라이드 애니메이션이 고민거리였습니다. 그런데 탭과 슬라이딩효과를 꼭 하나로 묶을필요는 없겠다 생각하게 되어 효과를 위한 div태그를 따로 만들게 되었습니다. 
+이것을 구현할때 가장 고민했던 것은 애니메이션 효과를 위한 (1)언더라인의 위치잡기 + (2)그 위치를 css에 어떻게 넘겨줄지 였습니다. (1)은 ref나 queryselector를 사용해서 구현하려했는데 결국 queryselector로 구현했습니다. 그리고 (2)는 제가 기존에 쓰던 module.css로 하는것보다 styled-component의 props를 쓰는것이 더 쉽고 편하겠다고 판단하여 styled-components를 사용했습니다.
 
-## Available Scripts
+Slider
+>가장 난이도가 높을것이라 생각해 마지막에 했는데, 그리 어렵지않았습니다. 뭔가 잘못했나 생각될정도로 별것 아니었던거같습니다.. 예시에 존재하는 25/50/75지점들은 구현하지 못했지만 input태그의 range타입으로 슬라이더를 구현하고, state값을 받아와 div에 띄워주는 식으로 구현했습니다.
 
-In the project directory, you can run:
+Input
+> input,password 태그를 각각 이메일,패스워드 타입으로 설정, email에 유효성검사를 집어넣어 유효성을 만족하면 이미지 src를 바꿉니다. 
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dropdown
+>드롭다운을 내리면 검색창을 넣기위해, 기존에 있는 select를 사용하지않고 state가 바뀌면 display를 none->block으로 바꾸는 식으로 활용했습니다.
+그리고 검색필터는 array.filter로 구현했습니다
