@@ -6,12 +6,12 @@ import notcheck from "../check.png"
 import checked from "../checked.png"
 
 const Input = () => {
-    const [log,setLog] = useState("");
+    const [mail,setMail] = useState("");
     const [pw, setPw] = useState("");
     const [hide,setHide] = useState(false);
     const [eCheck,setECheck] = useState(false);
     const mailHandler = (e) => {
-        setLog(e.target.value);
+        setMail(e.target.value);
         const emailReg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
         if(emailReg.test(e.target.value)){
             setECheck(true);
@@ -35,7 +35,7 @@ const Input = () => {
                 <label>E-mail</label>
                 <div className={styles.mailbox}>
                     <input 
-                        value={log} 
+                        value={mail} 
                         name="email" 
                         type="email" 
                         onChange={mailHandler} 

@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
+const StyledDiv = styled.div`
+    position: relative;
+`;
 const StyledContain = styled.ul`
     padding: 0;
     display: flex;
