@@ -1,0 +1,40 @@
+@use '/src/styles/constants/levels';
+
+.toggle{
+  width: 360px;
+  height: 60px;
+  border-radius: 60px;
+  background-color: #5ac8fa;
+  display: flex;
+  position: relative;
+  padding: 5px;
+  margin-bottom: 30px;
+  
+  .togButton{
+    flex-grow: 1;
+    border-radius: 60px;
+    z-index: levels.$TOGGLE_BOX;
+    font-size: large;
+    font-weight: bold;
+  }
+  .notSelected{
+    position: absolute;
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    border-radius: 60px;
+    background-color: #ffffff;
+    z-index: levels.$TOGGLE_SELECTED;
+    transform: translateX(0);
+    transition: 0.2s;
+  }
+  .togSelected{
+    position: absolute;
+    width: calc(50% - 5px);
+    height: calc(100% - 10px);
+    border-radius: 60px;
+    background-color: #ffffff;
+    z-index: levels.$TOGGLE_SELECTED;
+    transform: translateX(100%);
+    transition: 0.2s transform;
+  }
+}
