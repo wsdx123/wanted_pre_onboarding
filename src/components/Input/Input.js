@@ -1,73 +1,48 @@
-import { useState } from "react";
-import styles from "./Input.module.css"
-import hiddeneye from "../hidden.png"
-import appeareye from "../view.png"
-import notcheck from "../check.png"
-import checked from "../checked.png"
+import { useState } from 'react'
+import { CheckIcon, VisibleIcon, UnvisibleIcon } from '../../assets/svgs'
+import styles from './Input.module.scss'
 
-const Input = () => {
-    const [mail,setMail] = useState("");
-    const [pw, setPw] = useState("");
-    const [hide,setHide] = useState(false);
-    const [eCheck,setECheck] = useState(false);
-    const mailHandler = (e) => {
-        setMail(e.target.value);
-        const emailReg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
-        if(emailReg.test(e.target.value)){
-            setECheck(true);
-        } else{
-            setECheck(false);
-        }
-    }
-    const pwHandler = (e) => {
-        setPw(e.target.value)
-    }
-    const formSub = (e) => {
-        e.preventDefault();
-    }
-    const hidHandler = () => {
-        setHide(!hide);
-    }
+function Input(){
+  const [mail,setMail] = useState('')
+  const [pw, setPw] = useState('')
+  const [eCheck, setECheck] = useState(false)
+  const [hide,setHide] = useState(false)
 
-    return(
-        <div>
-            <form className={styles.container} onSubmit={formSub}>
-                <label>E-mail</label>
-                <div className={styles.mailbox}>
-                    <input 
-                        value={mail} 
-                        name="email" 
-                        type="email" 
-                        onChange={mailHandler} 
-                        placeholder="E-mail" 
-                        className={styles.ininput}
-                    />
-                    <img 
-                        src={eCheck ? checked : notcheck} 
-                        className={styles.checking} 
-                        onClick={hidHandler} 
-                    />  
-                </div>
-                <label>Password</label>
-                <div className={styles.mailbox}>
-                    <input 
-                        value={pw} 
-                        name="password" 
-                        type={hide ? "text" : "password" } 
-                        onChange={pwHandler} 
-                        placeholder="Password" 
-                        id="pwID" 
-                        className={styles.ininput}
-                    />
-                    <img 
-                        src={hide ? appeareye : hiddeneye} 
-                        className={styles.hid} 
-                        onClick={hidHandler} 
-                    />
-                </div>
-            </form>
+  const handleSub = (e) => {
+    e.preventDefault()
+  }
+  const handleMail = (e) => {
+    setMail(e.currentTarget.value)
+    const emailReg = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+    emailReg.test(e.currentTarget.value) ? setECheck(true) : setECheck(false)
+  }
+  const handlePw = (e) => {
+    setPw(e.currentTarget.value)
+  }
+  const handleVisible = () => {
+    setHide(!hide)
+  }
+
+  return(
+    <div>
+      <form className={styles.inputForm} onSubmit={handleSub}>
+        <span className={styles.label}>E-mail</span>
+        <div className={styles.mailbox}>
+          <input value={mail} type='text' onChange={handleMail} placeholder='E-mail' className={styles.mailPwInput} />
+          <span className={styles.icons} style={{ backgroundColor: `${eCheck ? '#5ac8fa' : 'gray'}` }}>
+            <CheckIcon className={styles.check} />
+          </span>
         </div>
-    );
+        <span className={styles.label}>Password</span>
+        <div className={styles.mailbox}>
+          <input value={pw} type={hide ? 'text' : 'password'} onChange={handlePw} placeholder='Password' className={styles.mailPwInput} />
+          <button className={styles.icons} type='button' onClick={handleVisible}>
+            {hide ? <VisibleIcon /> : <UnvisibleIcon />}
+          </button>
+        </div>
+      </form>
+    </div>
+  )
 }
 
-export default Input;
+export default Input
