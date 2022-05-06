@@ -1,0 +1,26 @@
+@use '/src/styles/constants/colors';
+
+.tabContainer{
+  display: flex;
+  list-style: none;
+  width: 360px;
+  height: 60px;
+  position: relative;
+  
+
+  .tabButton{
+    width: 120px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid colors.$GRAYD;
+  }
+
+  span{
+    position: absolute;
+    width: 120px;
+    height: 3px;
+    top: calc(100% - 3px);
+    background-color: colors.$BLUE;
+    transition: 0.2s transform;
+  }
+}
