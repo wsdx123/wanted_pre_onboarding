@@ -1,0 +1,64 @@
+@use '/src/styles/constants/colors';
+
+.slider{
+  display: block;
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+
+  .sliderPercent{
+    display: flex;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    justify-content: flex-end;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    .percentItem{
+      margin-left: 10px;
+      font-weight: bold;
+    }
+  }
+  .slideBar{
+    width: calc(100% - 10px);
+    height: 5px;
+    border-radius: 5px;
+    background: colors.$GRAYD;
+
+    &::-webkit-slider-runnable-track{
+      cursor: pointer;
+    }
+    
+    &::-webkit-slider-thumb{
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      background: colors.$TEAL;
+      border-radius: 10px;
+      box-shadow: 0 10px 20px 0 rgba(colors.$BLACK, 2%);
+      outline: 4px solid colors.$GRAYE;
+      -webkit-appearance: none;
+    }
+  }
+  
+  .btnContainer{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    .percentBtn{
+      border-radius: 10px;
+      background-color: beige;
+      color: lightgray;
+      border: none;
+      font-size: 5px;
+      padding: 5px;
+      width: 30px;
+      &:hover{
+          background-color: blue;
+      }
+    }
+  }
+}
