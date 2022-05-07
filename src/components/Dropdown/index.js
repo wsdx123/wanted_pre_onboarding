@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { DownIcon } from '../../assets/svgs'
 import styles from './Dropdown.module.scss'
 import { cx } from '../../styles'
@@ -15,10 +15,10 @@ const DROP_DATA = [
 ]
 
 function Dropdown() {
-  const [arrow,setArrow] = useState(false)
-  const [dropList,setDropList] = useState([])
+  const [arrow, setArrow] = useState(false)
+  const [dropList, setDropList] = useState([])
   const [choosed, setChoosed] = useState('')
-  const [search,setSearch] = useState('')
+  const [search, setSearch] = useState('')
 
   const handleArrow = () => {
     setArrow(!arrow)
@@ -30,6 +30,7 @@ function Dropdown() {
   const handleSearch = (e) => {
     setSearch(e.currentTarget.value)
   }
+
   useEffect(() => {
     search ? setDropList(dropList.filter((data) => data.value.toLowerCase().includes(search.toLowerCase()))) : setDropList(DROP_DATA)
   },[search])
@@ -45,10 +46,10 @@ function Dropdown() {
           <div>
             {choosed === '' ? 'All Symbols' : choosed}
           </div>
-          <DownIcon style={{ transform: `${arrow ? 'rotate(180deg)' : ''}`}} className={styles.dIcon} />
+          <DownIcon className={cx(styles.dIcon, {[styles.rotated]:arrow})} />
         </button>
-        <div 
-          style={{ visibility: `${arrow ? 'visible' : 'hidden'}` }} 
+        {arrow && (
+        <div  
           className={styles.dropContainer}
         >
           <input 
@@ -58,7 +59,7 @@ function Dropdown() {
             className={styles.searchBar} 
             placeholder='Search Symbol'
           />
-          <ul className={styles.filterdDrop}>
+          <ul>
             {dropList.map((el) => {
               return(
                 <li 
@@ -72,7 +73,7 @@ function Dropdown() {
               )
             })}
           </ul>
-        </div>
+        </div>)}
       </div>
     </div>
   )

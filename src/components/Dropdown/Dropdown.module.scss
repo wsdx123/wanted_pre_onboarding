@@ -1,5 +1,7 @@
+@use '/src/styles/constants/colors';
+
 .dropDown{
-  background-color: red;
+  background-color: colors.$GRAYE;
   padding: 5px;
   width: 200px;
   .openDrop{
@@ -8,8 +10,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blue;
-    border: 1px solid lightgray;
+    background-color: colors.$WHITE;
+    border: 1px solid colors.$GRAYD;
+    border-radius: 3px;
 
     .dIcon{
       transition: 0.2s;
@@ -17,16 +20,14 @@
   }
 
   .dropContainer{
-    visibility: hidden;
     position: relative;
     margin-top: 10px;
-    border: 1px solid lightgray;
+    border: 1px solid colors.$GRAYD;
     display: flex;
     flex-direction: column;
 
-
     .searchBar{
-      border-bottom: 1px solid lightgray;
+      border-bottom: 1px solid colors.$GRAYD;
       padding: 5px;
       width: 100%;
       background-color: white;
@@ -34,15 +35,21 @@
 
     }
 
-    .filterdDrop{
-      
-      .filterElement{
-        padding: 5px;
-        
-        &:hover{
-          background-color: gray;
-        }
+    .filterElement{
+      padding: 5px; 
+      background-color: colors.$WHITE;
+
+      button{
+        color: colors.$GRAY6;
+      }
+
+      &:hover{
+        background-color: colors.$GRAYE;
       }
     }
   }
+}
+
+.rotated{
+  transform: rotate(180deg)
 }
