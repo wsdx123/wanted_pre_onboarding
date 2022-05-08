@@ -18,7 +18,7 @@ function Slider() {
         <div className={styles.percentItem}>{val}</div>
         <div className={styles.percentItem}>%</div>
       </div>
-      <input className={styles.slideBar} type='range' value={val} onChange={handleVal} min='0' max='100' />
+      <input className={styles.slideBar} style={{ '--val': `${val}%`}} type='range' value={val} onChange={handleVal} min='0' max='100' />
       <div className={styles.btnContainer}>
         {PERCENT_BUTTON.map((el) => {
           return(

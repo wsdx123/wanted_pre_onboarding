@@ -9,7 +9,7 @@
 
   .sliderPercent{
     display: flex;
-    border: 1px solid lightgray;
+    border: 1px solid colors.$GRAYD;
     border-radius: 5px;
     justify-content: flex-end;
     padding: 10px;
@@ -22,22 +22,22 @@
   }
   .slideBar{
     width: calc(100% - 10px);
-    height: 5px;
-    border-radius: 5px;
-    background: colors.$GRAYD;
 
     &::-webkit-slider-runnable-track{
-      cursor: pointer;
+      cursor: pointer;    
+      height: 5px;
+      border-radius: 10px;
+      background: linear-gradient(to right,colors.$TEAL var(--val), colors.$GRAYD var(--val));
     }
     
     &::-webkit-slider-thumb{
       cursor: pointer;
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
       background: colors.$TEAL;
       border-radius: 10px;
-      box-shadow: 0 10px 20px 0 rgba(colors.$BLACK, 2%);
       outline: 4px solid colors.$GRAYE;
+      transform: translateY(-5px);
       -webkit-appearance: none;
     }
   }
@@ -46,18 +46,18 @@
     display: flex;
     width:100%;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 15px;
 
     .percentBtn{
       border-radius: 10px;
-      background-color: beige;
-      color: lightgray;
+      background-color: colors.$GRAYD;
+      color: colors.$WHITE;
       border: none;
       font-size: 5px;
-      padding: 5px;
+      padding: 5px 0;
       width: 30px;
       &:hover{
-          background-color: blue;
+          background-color: colors.$TEAL;
       }
     }
   }
