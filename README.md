@@ -15,7 +15,10 @@ Input
 Dropdown
 >드롭다운을 내리면 검색창을 넣기위해, 기존에 있는 select를 사용하지않고 state가 바뀌면 display를 none->block으로 바꾸는 식으로 활용했습니다.
 그리고 검색필터는 array.filter로 구현했습니다
+<br/>
 
+##1주차 과제
+<br/>
 
 2022.05.06
 > - eslint,prettier,stylelint 환경설정. 
