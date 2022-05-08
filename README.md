@@ -15,3 +15,21 @@ Input
 Dropdown
 >드롭다운을 내리면 검색창을 넣기위해, 기존에 있는 select를 사용하지않고 state가 바뀌면 display를 none->block으로 바꾸는 식으로 활용했습니다.
 그리고 검색필터는 array.filter로 구현했습니다
+
+
+2022.05.06
+> - eslint,prettier,stylelint 환경설정. 
+> - 새로운 환경에서 Toggle 구현 완료. 적절치 않은 태그 사용이나 불필요한 태그 사용을 빼내고 간단하고 적절한 태그로 마크업.
+> - Tab의 기능,css 구현 완료. styled-components를 뻄. queryselector로 복잡하고 좋지않게 구현했던 underbar의 위치를 position:relative 로 손쉽게 구현함.
+> - Input의 기능,css 구현 완료. email유효성 검사의 표준 정규식 사용, 아이콘의 svg파일 사용, css 다듬기, interactive하지않은 태그  교체.
+<br/>
+
+2022.05.07
+> - Dropdown 바깥쪽 클릭시 접기 제외 기능,css 구현완료. styled-components 빼기, classnames 라이브러리 사용을 통해 일부코드의 간소화, filter를 useEffect에 옮겨 search값이 변할때마다 실행하도록 수정, key값에 index 대신 array에 id값을 가공해 넣음.
+> - Dropdown 외부 클릭시 접는 기능은 좀 더 이해가 필요한것 같다. ref의 이해부족이거나, 열고닫는 state에 이상이 있는것으로보인다.
+<br/>
+
+2022.05.08
+> - Slider 기능,css 구현완료. styled-components 빼기, 그리고 이전에는 기본 webkit slider 때문에 커스텀 하지않았었지만 린터와 스타일린터 설정 때문인지 완전히 백지상태여서 아예 새로 디자인을 했다.
+> - webkit-slider-thumb,runnable-track 을 찾아보고 최대한 비슷하게 커스텀했다. track의 볼록한건 완성하지못했다.
+> - css 의 var() 라는걸 알게 되어 css내에 변수로 사용할 수 있다는걸 알게되었고, 이를 마크업 시 inline style 로 slider의 value값과 연결시켜 linear-gradient에 색상 %값에 넣어줌으로써 슬라이더가 지나간 부분의 색상채우기를 구현하였다.
